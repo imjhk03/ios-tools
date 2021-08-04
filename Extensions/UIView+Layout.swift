@@ -1,9 +1,8 @@
 //
 //  UIView+Layout.swift
-//  Brandi
 //
-//  Created by Joo Hee on 20. 08. 12..
-//  Copyright © 2020 Brandi. All rights reserved.
+//
+//  Created by Joohee Kim on 20. 08. 12..
 //
 
 import UIKit
