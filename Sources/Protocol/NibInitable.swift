@@ -5,13 +5,14 @@
 //  Created by Joohee Kim on 21. 08. 05..
 //
 
+#if os(iOS)
 import UIKit
 
-protocol NibInitable {
+public protocol NibInitable {
     static func initFromNib() -> Self?
 }
 
-extension NibInitable where Self: UIView {
+public extension NibInitable where Self: UIView {
     static func initFromNib() -> Self? {
         let xibName = String(describing: self)
         guard bundle.path(forResource: xibName, ofType: "nib") != nil else { return nil }
@@ -19,7 +20,7 @@ extension NibInitable where Self: UIView {
     }
 }
 
-extension NibInitable where Self: UIViewController {
+public extension NibInitable where Self: UIViewController {
     static func initFromNib() -> Self? {
         let xibName = String(describing: self)
         return ((Self)(nibName: xibName, bundle: bundle))
@@ -27,3 +28,5 @@ extension NibInitable where Self: UIViewController {
 }
 
 extension UIView: NibInitable {}
+extension UIViewController: NibInitable {}
+#endif

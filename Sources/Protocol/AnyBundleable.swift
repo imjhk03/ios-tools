@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AnyBundleable {
+public protocol AnyBundleable {
 
     static var bundle: Bundle { get }
 
@@ -15,7 +15,7 @@ protocol AnyBundleable {
 
 }
 
-extension AnyBundleable where Self: NSObject {
+public extension AnyBundleable where Self: NSObject {
 
     static var bundle: Bundle {
         return Bundle(for: self)
