@@ -1,0 +1,29 @@
+//
+//  NibInitable.swift
+//  
+//
+//  Created by Joohee Kim on 21. 08. 05..
+//
+
+import UIKit
+
+protocol NibInitable {
+    static func initFromNib() -> Self?
+}
+
+extension NibInitable where Self: UIView {
+    static func initFromNib() -> Self? {
+        let xibName = String(describing: self)
+        guard bundle.path(forResource: xibName, ofType: "nib") != nil else { return nil }
+        return bundle.loadNibNamed(xibName, owner: nil, options: nil)?.first as? Self
+    }
+}
+
+extension NibInitable where Self: UIViewController {
+    static func initFromNib() -> Self? {
+        let xibName = String(describing: self)
+        return ((Self)(nibName: xibName, bundle: bundle))
+    }
+}
+
+extension UIView: NibInitable {}
