@@ -5,6 +5,7 @@
 //  Created by Joohee Kim on 21. 08. 05..
 //
 
+#if os(iOS)
 import UIKit
 
 public protocol AnyBundleable {
@@ -28,3 +29,4 @@ public extension AnyBundleable where Self: NSObject {
 }
 
 extension NSObject: AnyBundleable {}
+#endif

@@ -5,13 +5,14 @@
 //  Created by Joohee Kim on 20. 08. 12..
 //
 
+#if os(iOS)
 import UIKit
 
-struct AnchoredConstraints {
+public struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
 
-extension UIView {
+public extension UIView {
     
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
@@ -74,3 +75,4 @@ extension UIView {
     }
     
 }
+#endif
