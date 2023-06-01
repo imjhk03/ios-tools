@@ -8,15 +8,15 @@
 #if os(iOS)
 import UIKit
 
-protocol Reusable: AnyObject {
+public protocol Reusable: AnyObject {
     static var reuseIdentifier: String { get }
 }
 
-extension Reusable where Self: UIView {
+public extension Reusable where Self: UIView {
     static var reuseIdentifier: String {
         return String(describing: self)
     }
 }
 
-protocol NibReusable: Reusable, NibLoadable { }
+public protocol NibReusable: Reusable, NibLoadable { }
 #endif

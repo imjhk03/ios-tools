@@ -8,7 +8,7 @@
 #if os(iOS)
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
     
     func registerCell<T: UICollectionViewCell>(_: T.Type) where T: Reusable {
         register(T.self, forCellWithReuseIdentifier: T.reuseIdentifier)

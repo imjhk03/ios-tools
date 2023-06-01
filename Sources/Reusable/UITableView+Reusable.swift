@@ -8,7 +8,7 @@
 #if os(iOS)
 import UIKit
 
-extension UITableView {
+public extension UITableView {
     
     func registerCell<T: UITableViewCell>(_: T.Type) where T: Reusable {
         register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
