@@ -56,7 +56,7 @@ public extension UICollectionView {
     
     func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind elementKind: SupplementaryViewKind, for indexPath: IndexPath) -> T where T: Reusable {
         guard let view = dequeueReusableSupplementaryView(ofKind: elementKind.rawValue, withReuseIdentifier: T.reuseIdentifier, for: indexPath)  as? T else {
-            fatalError("Could not dequeue cell with identifier: \(T.reuseIdentifier)")
+            fatalError("Could not dequeue supplementaryView with identifier: \(T.reuseIdentifier)")
         }
         
         return view
